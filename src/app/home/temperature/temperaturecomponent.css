@@ -1,0 +1,25 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+.body{
+  background-color: aliceblue;
+}
+.container{
+  position: relative;
+  width:fit-content;
+  background-color:  lavender;
+  margin:10px auto;
+  column-count: 3;
+  column-width:225px;
+  column-gap: 3.5px;
+}
+.container div{
+  padding:10px;
+}
+image{
+  border-radius: 10%;
+  width:400px;
+  height: auto;
+  position: relative;
+}

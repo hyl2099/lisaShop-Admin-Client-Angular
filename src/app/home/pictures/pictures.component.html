@@ -1,0 +1,46 @@
+<mat-card style="align-content: center">
+  <mat-card-title>Search</mat-card-title>
+  <mat-card-content>
+<!--    <mat-form-field>-->
+<!--      <input [(ngModel)]="picture.remark" matInput placeholder="id:">-->
+<!--    </mat-form-field>-->
+    <mat-form-field>
+      <input [(ngModel)]="picture.owner" matInput placeholder="owner:">
+    </mat-form-field>
+    <button (click)="search()" color="primary" mat-mini-fab>
+      <mat-icon>search</mat-icon>
+    </button>
+    <button (click)="resetSearch()" color="primary" mat-mini-fab>
+      <mat-icon>close</mat-icon>
+    </button>
+    <button (click)="create()"  mat-button mat-icon-button matSuffix>
+      <mat-icon color="warn">add</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+
+
+
+<mat-card>
+  <mat-card-content>
+    <div class="container" id="container">
+      <div *ngFor="let picture of pictures">
+        <img src="{{picture.image}}" style="width:400px;">
+        <br>
+        <a *ngIf="picture.owner.length  > 10 "> {{picture.owner.substring(0,10)+'...'}} </a>
+        <a *ngIf="picture.owner.length  <= 10 "> {{picture.owner}} </a>
+        <a>{{picture.uploadTime.toString().substring(0,19)}} </a>
+        <a>{{picture.remark}} </a>
+        <button (click)="read(picture)" mat-button mat-icon-button matSuffix>
+          <mat-icon color="warn">visibility</mat-icon>
+        </button>
+        <button (click)="update(picture)"  mat-button mat-icon-button matSuffix>
+          <mat-icon color="warn">mode_edit</mat-icon>
+        </button>
+        <button (click)="delete(picture)"  mat-button mat-icon-button matSuffix>
+          <mat-icon color="warn">close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

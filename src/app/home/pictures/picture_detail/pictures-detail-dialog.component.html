@@ -1,0 +1,16 @@
+<h3 mat-dialog-title>Picture's Detail</h3>
+<mat-dialog-content>
+  <img src="{{picture.image}}"  style="width:400px;"/>
+  <br>
+  <mat-label><strong>ID:</strong> {{picture.id.toString()}} </mat-label>
+  <br>
+  <mat-label><strong>Owner:</strong> {{picture.owner.toString()}} </mat-label>
+  <br>
+  <mat-label><strong>Upload Time:</strong> {{picture.uploadTime.toString().substring(0,19)}} </mat-label>
+  <br>
+  <mat-label><strong>Remark:</strong> {{picture.remark}} </mat-label>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button>Close</button>
+</mat-dialog-actions>

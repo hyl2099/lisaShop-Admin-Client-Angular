@@ -1,0 +1,19 @@
+<h3 mat-dialog-title>Are you sure to delete?</h3>
+<mat-dialog-content>
+  <img src="{{picture.image}}"  style="width:400px"/>
+  <br>
+  <mat-label><strong>Owner:</strong> {{picture.owner.toString()}} </mat-label>
+  <br>
+  <mat-label><strong>Upload Time:</strong> {{picture.uploadTime.toString().substring(0,19)}} </mat-label>
+  <br>
+  <mat-label><strong>Remark:</strong> {{picture.remark}} </mat-label>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button>Close</button>
+  <button (click)="delete()" color="primary" mat-raised-button>
+    <mat-icon>done_outline</mat-icon>
+    <span>Sure</span>
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>Update Picture</h3>
+<mat-dialog-content>
+  <mat-form-field>
+    <input [(ngModel)]="newPicture.owner"  matInput placeholder="Owner"/>
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="newPicture.remark" matInput placeholder="Remark" type="text"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button (click)="update()" color="primary" mat-raised-button>
+    <span>Update</span>
+  </button>
+  <button mat-dialog-close mat-raised-button>Close</button>
+</mat-dialog-actions>

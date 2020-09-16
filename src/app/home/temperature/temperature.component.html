@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>Search</mat-card-title>
+  <mat-card-content>
+    <mat-form-field style="margin: 10px">
+      <input [(ngModel)]="temperature.time" matInput placeholder="Time:">
+    </mat-form-field>
+    <mat-form-field style="margin: 10px">
+      <input [(ngModel)]="temperature.temperature" matInput placeholder="Temperature:">
+    </mat-form-field>
+    <mat-form-field style="margin: 10px">
+      <input [(ngModel)]="temperature.humidity" matInput placeholder="Humidity:">
+    </mat-form-field>
+    <button (click)="search()" color="primary" mat-mini-fab style="margin: 10px">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button (click)="resetSearch()" color="primary" mat-mini-fab style="margin: 10px">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+<!-- Default: [createAction]="true" [readAction]="true" [updateAction]="true" [deleteAction]="true"-->
+<app-crud [createAction]="false" [readAction]="false" [updateAction]="false"
+          (delete)=delete($event)
+          [columns]="columns" [data]="data" [title]="title"></app-crud>
